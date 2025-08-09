@@ -65,7 +65,7 @@ const instrumentRef = useRef(null);
 ];
 
   return (
-    <div className="font-sans bg-gray-900 text-white">
+    <div className="font-sans bg-white-900 text-white">
       {/* Hero Section Slider */}
 <section className="relative h-[90vh] overflow-hidden">
   <video
@@ -92,17 +92,24 @@ const instrumentRef = useRef(null);
 <section className="relative bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-800 py-20 px-6">
   <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
     {/* Left Column - Text */}
-    <div>
-      <h2 className="text-4xl font-extrabold text-blue-800 mb-4">About Technoflow</h2>
-      <p className="text-lg leading-relaxed">
-        At Technoflow, we are dedicated to delivering next-generation engineering solutions across electrical
-        power systems, mechanical services, oil & gas instrumentation, and industrial automation.
-      </p>
-      <p className="mt-4 text-md text-gray-600">
-        Our technology-first approach enables us to provide turnkey systems—from SCADA and switchgears to
-        precision pump control, water systems, and IoT-based automation across 25+ sectors.
-      </p>
-    </div>
+<div>
+  <h2 className="text-4xl font-extrabold text-blue-800 mb-4">About Technoflow</h2>
+  <p className="text-lg leading-relaxed">
+    At Technoflow, we are dedicated to delivering next-generation engineering solutions across electrical
+    power systems, mechanical services, oil & gas instrumentation, and industrial automation.
+  </p>
+  <p className="mt-4 text-md text-gray-600">
+    Our technology-first approach enables us to provide turnkey systems—from SCADA and switchgears to
+    precision pump control, water systems, and IoT-based automation across 25+ sectors.
+  </p>
+
+  {/* Contact Info */}
+  <div className="mt-6 text-md text-gray-700">
+    <p><span className="font-semibold">Contact:</span> +971 4 3473700</p>
+    <p className="mt-1"><span className="font-semibold">Email:</span> info@technoflow.com</p>
+  </div>
+</div>
+
 
     {/* Right Column - Stats */}
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
@@ -131,8 +138,8 @@ const instrumentRef = useRef(null);
 </section>
 
 
-      {/* Floating Sidebar */}
-    <div className="fixed top-32 left-4 z-50 hidden md:block">
+   {/* Floating Sidebar */}
+<div className="fixed top-32 left-4 z-50 hidden md:block">
   <div className="bg-white/90 text-blue-900 shadow-xl rounded-xl overflow-hidden border border-blue-100">
     {[
       { label: "EPDC", ref: epdcRef },
@@ -140,14 +147,16 @@ const instrumentRef = useRef(null);
       { label: "ELECTRICAL WORK IN VESSEL IN PORT", ref: vesselRef },
       { label: "PANEL WORK", ref: panelRef },
       { label: "SITE-WORK PICTURE", ref: siteRef },
-      { label: "PANEL INSTALLATION", ref: installationRef},
-      { label: "INSTRUMENT INSTALLATION", ref: instrumentRef},
+      { label: "PANEL INSTALLATION", ref: installationRef },
+      { label: "INSTRUMENT INSTALLATION", ref: instrumentRef },
     ].map(({ label, ref }) => (
       <button
         key={label}
         onClick={() => scrollToSection(ref, label)}
-        className={`block px-6 py-3 w-48 text-left text-sm font-medium tracking-wide transition-all duration-300 ${
-          activeTab === label ? "bg-blue-600 text-white font-semibold" : "hover:bg-blue-50"
+        className={`block px-6 py-3 w-56 text-left text-base leading-relaxed font-medium tracking-wide transition-all duration-300 ${
+          activeTab === label
+            ? "bg-blue-600 text-white font-semibold"
+            : "hover:bg-blue-50 text-blue-900"
         }`}
       >
         {label}
@@ -156,9 +165,10 @@ const instrumentRef = useRef(null);
   </div>
 </div>
 
+
       {/* Sections */}
       <main className="space-y-24 px-6 py-16 max-w-6xl mx-auto">
-<section ref={epdcRef} className="relative bg-gradient-to-br from-gray-900 via-black to-gray-950 text-white px-6 py-20 overflow-hidden">
+<section ref={epdcRef} className="relative bg-white text-black px-6 py-20 overflow-hidden">
   <motion.div
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -169,24 +179,24 @@ const instrumentRef = useRef(null);
     {/* Left: Modern Info Block */}
     <div className="backdrop-blur-xl bg-white/5 p-8 rounded-3xl border border-white/10 shadow-xl hover:shadow-blue-500/20 transition duration-500">
       <h2 className="text-4xl font-extrabold text-blue-400 mb-4">Electrical Power Distribution & Control (EPDC)</h2>
-      <p className="text-md text-gray-300 mb-6 leading-relaxed">
+      <p className="text-md text-black-300 mb-6 leading-relaxed">
         At Technoflow, our EPDC division delivers advanced solutions for 
-        <span className="font-semibold text-white"> LV/MV switchgears</span>, 
-        <span className="font-semibold text-white"> energy automation</span>, 
-        <span className="font-semibold text-white"> instrumentation</span>, and 
-        <span className="font-semibold text-white"> protection systems</span>.
+        <span className="font-semibold text-black"> LV/MV switchgears</span>, 
+        <span className="font-semibold text-black"> energy automation</span>, 
+        <span className="font-semibold text-black"> instrumentation</span>, and 
+        <span className="font-semibold text-black"> protection systems</span>.
       </p>
-      <p className="text-sm text-gray-400 mb-4">
+      <p className="text-sm text-black-400 mb-4">
         Supporting smart infrastructure including substations and industrial control centers through:
       </p>
-      <ul className="space-y-2 text-sm text-blue-100 pl-4 list-disc">
+      <ul className="space-y-2 text-sm text-black-100 pl-4 list-disc">
         <li>LV/MV Switchboards and Control Panels</li>
         <li>SCADA & PLC Automation Integration</li>
         <li>Protection Relays & Panel Retrofitting</li>
         <li>Commissioning & Maintenance Support</li>
       </ul>
-      <p className="text-sm text-gray-400 mt-6">
-        We ensure <span className="text-white font-medium">reliable, scalable, and safe systems</span> across sectors like 
+      <p className="text-sm text-black-400 mt-6">
+        We ensure <span className="text-black font-medium">reliable, scalable, and safe systems</span> across sectors like 
         <em> utilities, oil & gas, and manufacturing</em>.
       </p>
     </div>
@@ -211,7 +221,7 @@ const instrumentRef = useRef(null);
   </motion.div>
 </section>
 
-<section  ref={mechanicalRef} className="relative bg-gradient-to-br from-gray-900 via-black to-gray-950 text-white px-6 py-20 overflow-hidden">
+<section  ref={mechanicalRef} className="relative bg-white text-black px-6 py-20 overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -221,17 +231,17 @@ const instrumentRef = useRef(null);
       >
         <div className="backdrop-blur-xl bg-white/5 p-8 rounded-3xl border border-white/10 shadow-xl hover:shadow-blue-500/20 transition duration-500">
           <h2 className="text-4xl font-extrabold text-blue-400 mb-4">Mechanical Division</h2>
-          <p className="text-md text-gray-300 mb-6">
-            Technoflow provides expert services for <span className="text-white font-semibold">pumps, generators, HVAC</span>, and <span className="text-white font-semibold">solar energy systems</span>, optimizing efficiency and sustainability.
+          <p className="text-md text-black-300 mb-6">
+            Technoflow provides expert services for <span className="text-black font-semibold">pumps, generators, HVAC</span>, and <span className="text-black font-semibold">solar energy systems</span>, optimizing efficiency and sustainability.
           </p>
-          <ul className="space-y-2 text-sm text-blue-100 pl-4 list-disc">
+          <ul className="space-y-2 text-sm text-black-100 pl-4 list-disc">
             <li>Solar AC & Water Heating</li>
             <li>Diesel UPS & Pumping Systems</li>
             <li>HVAC & Chiller Installations</li>
             <li>Energy Optimization & Support</li>
           </ul>
-          <p className="text-sm text-gray-400 mt-6">
-            Tailored solutions ensure <span className="text-white font-medium">reliable mechanical infrastructure</span>.
+          <p className="text-sm text-black-400 mt-6">
+            Tailored solutions ensure <span className="text-black font-medium">reliable mechanical infrastructure</span>.
           </p>
         </div>
 
@@ -255,7 +265,7 @@ const instrumentRef = useRef(null);
     </section>
 
     {/* --- vessel --- */}
-    <section ref={vesselRef} className="relative bg-gradient-to-br from-gray-900 via-black to-gray-950 text-white px-6 py-20 overflow-hidden">
+    <section ref={vesselRef} className="relative bg-white text-black px-6 py-20 overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -265,17 +275,17 @@ const instrumentRef = useRef(null);
       >
         <div className="backdrop-blur-xl bg-white/5 p-8 rounded-3xl border border-white/10 shadow-xl hover:shadow-blue-500/20 transition duration-500">
           <h2 className="text-4xl font-extrabold text-blue-400 mb-4">ELECTRICAL WORK IN VESSEL IN PORT</h2>
-          <p className="text-md text-gray-300 mb-6">
+          <p className="text-md text-black-300 mb-6">
            At Technoflow, we specialize in providing comprehensive electrical solutions for vessels docked in port — ensuring safety, efficiency, and full operational readiness.
           </p>
-          <ul className="space-y-2 text-sm text-blue-100 pl-4 list-disc">
+          <ul className="space-y-2 text-sm text-black-100 pl-4 list-disc">
             <li> Power distribution system upgrades</li>
             <li>Lighting installation and maintenance (interior & exterior)</li>
             <li>Motor and generator servicing</li>
             <li>Troubleshooting and fault diagnostics</li>
           </ul>
-          <p className="text-sm text-gray-400 mt-6">
-            Ensuring <span className="text-white font-medium">compliance, safety, and productivity</span>.
+          <p className="text-sm text-black-400 mt-6">
+            Ensuring <span className="text-black font-medium">compliance, safety, and productivity</span>.
           </p>
         </div>
 
@@ -299,7 +309,7 @@ const instrumentRef = useRef(null);
     </section>
 
     {/* --- Panel Work --- */}
-    <section ref={panelRef} className="relative bg-gradient-to-br from-gray-900 via-black to-gray-950 text-white px-6 py-20 overflow-hidden">
+    <section ref={panelRef} className="relative bg-white text-black px-6 py-20 overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -309,17 +319,17 @@ const instrumentRef = useRef(null);
       >
         <div className="backdrop-blur-xl bg-white/5 p-8 rounded-3xl border border-white/10 shadow-xl hover:shadow-blue-500/20 transition duration-500">
           <h2 className="text-4xl font-extrabold text-blue-400 mb-4">PANEL WORK</h2>
-          <p className="text-md text-gray-300 mb-6">
+          <p className="text-md text-black-300 mb-6">
            Technoflow delivers custom-designed electrical panel solutions for marine and industrial applications — built for durability, safety, and smart control.
           </p>
-          <ul className="space-y-2 text-sm text-blue-100 pl-4 list-disc">
+          <ul className="space-y-2 text-sm text-black-100 pl-4 list-disc">
             <li> Fabrication of LT & HT Panels</li>
             <li>Control panel wiring & component integration</li>
             <li>Lighting distribution panels</li>
             <li>PLC & automation panel design</li>
           </ul>
-          <p className="text-sm text-gray-400 mt-6">
-            Driving <span className="text-white font-medium">automation, analytics, and insight</span> for modern industries.
+          <p className="text-sm text-black-400 mt-6">
+            Driving <span className="text-black font-medium">automation, analytics, and insight</span> for modern industries.
           </p>
         </div>
 
@@ -343,7 +353,7 @@ const instrumentRef = useRef(null);
     </section>
 
     {/* --- Site Work --- */}
-    <section ref={siteRef} className="relative bg-gradient-to-br from-gray-900 via-black to-gray-950 text-white px-6 py-20 overflow-hidden">
+    <section ref={siteRef} className="relative bg-white text-black px-6 py-20 overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -353,17 +363,17 @@ const instrumentRef = useRef(null);
       >
         <div className="backdrop-blur-xl bg-white/5 p-8 rounded-3xl border border-white/10 shadow-xl hover:shadow-blue-500/20 transition duration-500">
           <h2 className="text-4xl font-extrabold text-blue-400 mb-4">SITE WORK</h2>
-          <p className="text-md text-gray-300 mb-6">
+          <p className="text-md text-black-300 mb-6">
            At Technoflow, we don't just plan — we execute on-site with precision and power. From cable laying to complete system integration, our experienced team ensures every electrical project is delivered with zero shortcuts and full safety compliance.
           </p>
-          <ul className="space-y-2 text-sm text-blue-100 pl-4 list-disc">
+          <ul className="space-y-2 text-sm text-black-100 pl-4 list-disc">
             <li> Electrical cable routing & laying (underground & overhead)</li>
             <li>Termination & jointing for LT/HT cables</li>
             <li>Conduit and tray installations</li>
             <li> On-site panel mounting & commissioning</li>
           </ul>
-          <p className="text-sm text-gray-400 mt-6">
-            Driving <span className="text-white font-medium">automation, analytics, and insight</span> for modern industries.
+          <p className="text-sm text-black-400 mt-6">
+            Driving <span className="text-black font-medium">automation, analytics, and insight</span> for modern industries.
           </p>
         </div>
 
@@ -387,7 +397,7 @@ const instrumentRef = useRef(null);
     </section>
 
     {/* --- PANEL INSTALLATION --- */}
-    <section ref={installationRef} className="relative bg-gradient-to-br from-gray-900 via-black to-gray-950 text-white px-6 py-20 overflow-hidden">
+    <section ref={installationRef} className="relative bg-white text-black px-6 py-20 overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -397,18 +407,18 @@ const instrumentRef = useRef(null);
       >
         <div className="backdrop-blur-xl bg-white/5 p-8 rounded-3xl border border-white/10 shadow-xl hover:shadow-blue-500/20 transition duration-500">
           <h2 className="text-4xl font-extrabold text-blue-400 mb-4">PANEL INSTALLATION</h2>
-          <p className="text-md text-gray-300 mb-6">
+          <p className="text-md text-black-300 mb-6">
            When it comes to precision electrical panel installation, Technoflow brings expertise that ensures every connection is safe, stable, and future-ready.
 We handle everything from mounting to live testing
           </p>
-          <ul className="space-y-2 text-sm text-blue-100 pl-4 list-disc">
+          <ul className="space-y-2 text-sm text-black-100 pl-4 list-disc">
             <li>Wall-mounted & floor-standing panel setup</li>
             <li>Cable gland fitting and termination</li>
             <li>Load distribution checks</li>
             <li>Tightening & torque testing of bus bars and terminals</li>
           </ul>
-          <p className="text-sm text-gray-400 mt-6">
-            Driving <span className="text-white font-medium">automation, analytics, and insight</span> for modern industries.
+          <p className="text-sm text-black-400 mt-6">
+            Driving <span className="text-black font-medium">automation, analytics, and insight</span> for modern industries.
           </p>
         </div>
 
@@ -432,7 +442,7 @@ We handle everything from mounting to live testing
     </section>
 
     {/* --- INSTRUMENT INSTALLATION --- */}
-    <section ref={instrumentRef} className="relative bg-gradient-to-br from-gray-900 via-black to-gray-950 text-white px-6 py-20 overflow-hidden">
+    <section ref={instrumentRef} className="relative bg-white text-black px-6 py-20 overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -442,18 +452,18 @@ We handle everything from mounting to live testing
       >
         <div className="backdrop-blur-xl bg-white/5 p-8 rounded-3xl border border-white/10 shadow-xl hover:shadow-blue-500/20 transition duration-500">
           <h2 className="text-4xl font-extrabold text-blue-400 mb-4">INSTRUMENT INSTALLATION</h2>
-          <p className="text-md text-gray-300 mb-6">
+          <p className="text-md text-black-300 mb-6">
            Technoflow offers precise and reliable instrument installation services for vessels, ports, and industrial systems — ensuring your operations run with maximum accuracy and control.
 We install a wide range of instruments used for monitoring, measurement, and automation, all done with tight calibration and clean cable management.
           </p>
-          <ul className="space-y-2 text-sm text-blue-100 pl-4 list-disc">
+          <ul className="space-y-2 text-sm text-black-100 pl-4 list-disc">
             <li>  Temperature, pressure & level transmitters</li>
             <li>Flow meters & sensors</li>
             <li>Voltage/current measuring instruments</li>
             <li> Control and signal transmitters</li>
           </ul>
-          <p className="text-sm text-gray-400 mt-6">
-            Driving <span className="text-white font-medium">automation, analytics, and insight</span> for modern industries.
+          <p className="text-sm text-black-400 mt-6">
+            Driving <span className="text-black font-medium">automation, analytics, and insight</span> for modern industries.
           </p>
         </div>
 
@@ -477,7 +487,7 @@ We install a wide range of instruments used for monitoring, measurement, and aut
     </section>
 
 
-    <section className="bg-black text-white py-20 px-6">
+    <section className="bg-white text-black py-20 px-6">
   <div className="max-w-7xl mx-auto">
     <motion.h2
       initial={{ opacity: 0, y: -20 }}
@@ -619,7 +629,7 @@ We install a wide range of instruments used for monitoring, measurement, and aut
 
   {/* Bottom Note */}
   <div className="text-center text-xs text-gray-400 pt-6">
-    Built with ❤️ by TrendAce Software Solutions · Powered by React & Tailwind
+    Built by TrendAce Software Solutions · Powered by React & Tailwind
   </div>
 </footer>
 
