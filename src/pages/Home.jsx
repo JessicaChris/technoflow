@@ -14,7 +14,6 @@ import { motion } from "framer-motion";
 
 
 
-
 const Home = () => {
 const epdcRef = useRef(null);
 const mechanicalRef = useRef(null);
@@ -24,6 +23,18 @@ const siteRef = useRef(null);
 const installationRef = useRef(null);
 const instrumentRef = useRef(null);
   const [activeTab, setActiveTab] = useState("EPDC");
+  const aboutRef = useRef(null);
+
+const scrollToAbout = () => {
+  if (!aboutRef.current) return;
+  const NAV_HEIGHT = 112; // adjust if your navbar height differs
+  const y =
+    aboutRef.current.getBoundingClientRect().top +
+    window.pageYOffset -
+    NAV_HEIGHT;
+  window.scrollTo({ top: y, behavior: "smooth" });
+};
+
 
   const scrollToSection = (ref, tab) => {
     setActiveTab(tab);
@@ -73,7 +84,7 @@ const instrumentRef = useRef(null);
     loop
     muted
     playsInline
-    className="absolute w-full h-full object-cover brightness-50"
+    className="absolute w-full h-full object-cover brightness-50 pointer-events-none" 
   >
     <source src="/videos/video1.mp4" type="video/mp4" />
     Your browser does not support the video tag.
@@ -87,9 +98,18 @@ const instrumentRef = useRef(null);
       Engineering the future through innovation and smart infrastructure.
     </p>
   </div>
+   {/* 🔽 Scroll Down Button (INSIDE the hero) */}
+  <button
+  onClick={scrollToAbout}
+  className="absolute bottom-6 left-1/2 -translate-x-1/2 z-50 bg-white/20 text-white p-3 rounded-full shadow-lg hover:bg-white/40 transition animate-bounce"
+  aria-label="Scroll Down"
+>
+  ⌄
+</button>
 </section>
+
       {/* About Section (below hero) */}
-<section className="relative bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-800 py-20 px-6">
+<section  ref={aboutRef} className="relative bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-800 py-20 px-6">
   <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
     {/* Left Column - Text */}
 <div>
@@ -105,7 +125,7 @@ const instrumentRef = useRef(null);
 
   {/* Contact Info */}
   <div className="mt-6 text-md text-gray-700">
-    <p><span className="font-semibold">Contact:</span> +971 4 3473700</p>
+    <p><span className="font-semibold">Contact:</span> +971 551387960 </p>
     <p className="mt-1"><span className="font-semibold">Email:</span> info@technoflow.com</p>
   </div>
 </div>
@@ -164,6 +184,10 @@ const instrumentRef = useRef(null);
     ))}
   </div>
 </div>
+
+
+
+
 
 
       {/* Sections */}
@@ -615,7 +639,10 @@ We install a wide range of instruments used for monitoring, measurement, and aut
       <h4 className="font-semibold text-lg mb-4">Contact</h4>
       <ul className="space-y-3 text-sm text-gray-600">
         <li>
-          <strong>Technoflow HQ</strong><br />
+          <strong>Technoflow HQ</strong>
+          <br />
+           +971 551387960 <br />
+          <br />
           +971 4 3473700<br />
           info@technoflow.com
         </li>
@@ -628,7 +655,7 @@ We install a wide range of instruments used for monitoring, measurement, and aut
   </div>
 
   {/* Bottom Note */}
-  <div className="text-center text-xs text-gray-400 pt-6">
+  <div  ref={aboutRef} className="text-center text-xs text-gray-400 pt-6">
     Built by TrendAce Software Solutions · Powered by React & Tailwind
   </div>
 </footer>
