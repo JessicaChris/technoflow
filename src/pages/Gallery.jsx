@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const Gallery = () => {
   const IMAGES = [
@@ -9,6 +9,7 @@ const Gallery = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [index, setIndex] = useState(0);
+  const aboutRef = useRef(null);
 
   // keyboard controls
   useEffect(() => {
@@ -76,7 +77,7 @@ const Gallery = () => {
             ✕
           </button>
 
-          {/* Image wrapper with top padding so it isn’t glued to navbar */}
+          {/* Image wrapper */}
           <div
             className="max-w-5xl mx-auto px-6 pt-32 pb-16 flex justify-center"
             onClick={(e) => e.stopPropagation()}
@@ -103,6 +104,74 @@ const Gallery = () => {
           </button>
         </div>
       )}
+
+      {/* FOOTER */}
+      <footer className="bg-gray-100 mt-20 pt-12 pb-6">
+        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+          {/* Logo + Socials */}
+          <div>
+            <img src="/images/logo.png" alt="Technoflow Logo" className="h-24 mb-4" />
+            <p className="text-sm text-gray-500 mb-4">
+              © {new Date().getFullYear()} Technoflow. All rights reserved.
+            </p>
+            <div className="flex gap-3 mt-2">
+              <a href="#" className="text-blue-700 hover:text-blue-900 transition">
+                <i className="fab fa-facebook-f text-xl"></i>
+              </a>
+              <a href="#" className="text-gray-800 hover:text-black transition">
+                <i className="fab fa-x-twitter text-xl"></i>
+              </a>
+              <a href="#" className="text-blue-700 hover:text-blue-900 transition">
+                <i className="fab fa-linkedin-in text-xl"></i>
+              </a>
+            </div>
+          </div>
+
+          {/* About Links */}
+          <div>
+            <h4 className="font-semibold text-lg mb-4">About</h4>
+            <ul className="space-y-2 text-sm text-gray-600">
+              <li><a href="#" className="hover:text-blue-600">About Us</a></li>
+              <li><a href="#" className="hover:text-blue-600">Careers</a></li>
+              <li><a href="#" className="hover:text-blue-600">Media Center</a></li>
+              <li><a href="#" className="hover:text-blue-600">CSR</a></li>
+            </ul>
+          </div>
+
+          {/* Portfolio */}
+          <div>
+            <h4 className="font-semibold text-lg mb-4">Portfolio</h4>
+            <ul className="space-y-2 text-sm text-gray-600">
+              <li><a href="#" className="hover:text-blue-600">Engineering & Contracting</a></li>
+              <li><a href="#" className="hover:text-blue-600">Manufacturing & Trading</a></li>
+              <li><a href="#" className="hover:text-blue-600">Industrial & Retail</a></li>
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h4 className="font-semibold text-lg mb-4">Contact</h4>
+            <ul className="space-y-3 text-sm text-gray-600">
+              <li>
+                <strong>Technoflow HQ</strong>
+                <br />
+                +971 551387960 <br />
+                +971 4 3473700<br />
+                info@technoflow.com
+              </li>
+              <li>
+                <strong>Toll Free</strong><br />
+                800-TECHFLOW
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom Note */}
+        <div ref={aboutRef} className="text-center text-xs text-gray-400 pt-6">
+          Built by TrendAce Software Solutions · Powered by React & Tailwind
+        </div>
+      </footer>
     </div>
   );
 };
