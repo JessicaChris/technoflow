@@ -1,7 +1,57 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 const Blog = () => {
   const aboutRef = useRef(null);
+
+  // posts with short + extra content
+  const posts = [
+    {
+      title: "Vessel Maintenance & Port Operations",
+      img: "/images/work1.png",
+      short: `Our team recently carried out extensive maintenance operations 
+on cargo vessels docked at the port. From hull inspections to onboard electrical checks, 
+we ensured compliance with international safety standards. These projects highlight 
+Technoflow’s capability to handle large-scale marine infrastructure tasks efficiently.`,
+      more: `Beyond routine inspections, we deployed condition-based monitoring on propulsion and auxiliary systems, 
+using vibration analysis and thermal imaging to catch early faults. Our crews coordinated with port authorities 
+to optimize dry-dock windows, cutting idle time by 18%. We also upgraded ballast water management units to IMO D-2 
+standards and implemented a digital maintenance log that syncs with shore—giving clients real-time visibility into 
+task progress, spares usage, and compliance certificates.`,
+    },
+    {
+      title: "On-Deck Engineering for Cargo Vessels",
+      img: "/images/work12.png",
+      short: `Working directly on the upper deck of large cargo carriers, 
+our engineers were responsible for installing and upgrading mechanical systems. 
+This project required high precision and coordination with port authorities, 
+ensuring minimal downtime and maximum operational efficiency.`,
+      more: `Scope included winch overhauls, load-testing of cranes, and replacement of high-pressure hydraulic lines 
+with certified hoses and quick-release couplings. We redesigned pipe supports with corrosion-resistant alloys and 
+added anti-vibration mounts to reduce noise levels by 12 dB during cargo operations. The team also commissioned 
+PLC-based interlocks for deck machinery, adding diagnostics screens that cut troubleshooting time from hours to minutes.`,
+    },
+    {
+      title: "Industrial Electrical Panel Installation",
+      img: "/images/work4.png",
+      short: `As part of our instrumentation and electrical projects, 
+we designed and installed advanced electrical distribution panels. 
+These panels are equipped with safety protections, smart monitoring, 
+and optimized load management. Our expertise guarantees reliability 
+and safety in both industrial and marine environments.`,
+      more: `We delivered form-4b MCC panels with segregated busbars, integrated ARC-flash relays, 
+and Type-tested assemblies (TTA). Energy meters feed data to a cloud dashboard over MODBUS/TCP with 
+predictive alerts on harmonics and peak demand. The panels include ATS logic for seamless genset switchover 
+(<150 ms) and selective coordination studies ensured breakers isolate faults without plant-wide trips. 
+Commissioning wrapped with IR tests, relay coordination checks, and operator training.`,
+    },
+  ];
+
+  const [expanded, setExpanded] = useState(posts.map(() => false));
+
+  const toggle = (i) =>
+    setExpanded((prev) =>
+      prev.map((v, idx) => (idx === i ? !v : v))
+    );
 
   return (
     <div className="font-sans bg-white text-black min-h-screen fade-in">
@@ -36,33 +86,7 @@ const Blog = () => {
       {/* CONTENT */}
       <section className="py-16 px-6 md:px-20 fade-in-up delay-2">
         <div className="max-w-6xl mx-auto space-y-12">
-          {[
-            {
-              title: "Vessel Maintenance & Port Operations",
-              img: "/images/work1.png",
-              desc: `Our team recently carried out extensive maintenance operations 
-              on cargo vessels docked at the port. From hull inspections to onboard electrical checks, 
-              we ensured compliance with international safety standards. These projects highlight 
-              Technoflow’s capability to handle large-scale marine infrastructure tasks efficiently.`,
-            },
-            {
-              title: "On-Deck Engineering for Cargo Vessels",
-              img: "/images/work12.png",
-              desc: `Working directly on the upper deck of large cargo carriers, 
-              our engineers were responsible for installing and upgrading mechanical systems. 
-              This project required high precision and coordination with port authorities, 
-              ensuring minimal downtime and maximum operational efficiency.`,
-            },
-            {
-              title: "Industrial Electrical Panel Installation",
-              img: "/images/work4.png",
-              desc: `As part of our instrumentation and electrical projects, 
-              we designed and installed advanced electrical distribution panels. 
-              These panels are equipped with safety protections, smart monitoring, 
-              and optimized load management. Our expertise guarantees reliability 
-              and safety in both industrial and marine environments.`,
-            },
-          ].map((post, i) => (
+          {posts.map((post, i) => (
             <div
               key={i}
               className="flex flex-col md:flex-row items-center gap-8 fade-in-up"
@@ -85,8 +109,17 @@ const Blog = () => {
                   {post.title}
                 </h2>
                 <p className="text-gray-700 text-lg leading-relaxed whitespace-pre-line">
-                  {post.desc}
+                  {post.short}
+                  {expanded[i] && (
+                    <span className="block mt-3">{post.more}</span>
+                  )}
                 </p>
+                <button
+                  onClick={() => toggle(i)}
+                  className="mt-3 text-blue-600 font-semibold hover:underline"
+                >
+                  {expanded[i] ? "See less ▲" : "See more ▼"}
+                </button>
               </div>
             </div>
           ))}
