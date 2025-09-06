@@ -20,7 +20,7 @@ const Contact = () => {
       <section className="relative h-[60vh] overflow-hidden fade-in">
         <div
           className="absolute inset-0 bg-center bg-cover bg-slate-800"
-          style={{ backgroundImage: "url('/images/company-2.jpg')" }} // swap with /images/contact-hero.jpg later
+          style={{ backgroundImage: "url('/images/contact.webp')" }} // swap with /images/contact-hero.jpg later
         />
         <div className="absolute inset-0 bg-black/50" />
 
@@ -155,4 +155,5 @@ const Contact = () => {
 };
 
 export default Contact;
+
 
