@@ -598,7 +598,6 @@ We install a wide range of instruments used for monitoring, measurement, and aut
 
     {/* Logo + Socials */}
     <div>
-      <img src="/images/logo.png" alt="Technoflow Logo" className="h-24 mb-4" />
       <p className="text-sm text-gray-500 mb-4">© {new Date().getFullYear()} Technoflow. All rights reserved.</p>
       <div className="flex gap-3 mt-2">
         <a href="#" className="text-blue-700 hover:text-blue-900 transition">
