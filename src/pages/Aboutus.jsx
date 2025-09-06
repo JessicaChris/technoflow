@@ -25,7 +25,7 @@ const AboutUs = () => {
       {/* Header Section */}
       <section className="relative h-[60vh] overflow-hidden fade-in">
         <img
-          src="/images/company-2.jpg"
+          src="/images/indu.jpg"
           alt="About Technoflow"
           className="absolute w-full h-full object-cover brightness-50"
         />
