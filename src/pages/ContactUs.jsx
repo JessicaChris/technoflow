@@ -89,7 +89,6 @@ const Contact = () => {
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Logo + Socials */}
           <div>
-            <img src="/images/logo.png" alt="Technoflow Logo" className="h-24 mb-4" />
             <p className="text-sm text-gray-500 mb-4">
               © {new Date().getFullYear()} Technoflow. All rights reserved.
             </p>
@@ -156,3 +155,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
