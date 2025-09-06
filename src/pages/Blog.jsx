@@ -70,7 +70,7 @@ Commissioning wrapped with IR tests, relay coordination checks, and operator tra
       <section className="relative h-[60vh] overflow-hidden fade-in">
         <div
           className="absolute inset-0 bg-center bg-cover bg-slate-800"
-          style={{ backgroundImage: "url('/images/company-2.jpg')" }}
+          style={{ backgroundImage: "url('/images/blog_pic.jpg')" }}
         />
         <div className="absolute inset-0 bg-black/50" />
 
@@ -197,4 +197,5 @@ Commissioning wrapped with IR tests, relay coordination checks, and operator tra
 };
 
 export default Blog;
+
 
