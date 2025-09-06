@@ -532,13 +532,11 @@ We install a wide range of instruments used for monitoring, measurement, and aut
           className="relative overflow-hidden group shadow-lg rounded-xl border border-gray-800"
         >
           <img
-            src="/images/company-2.jpg"
-            alt={project.title}
+            src="/images/oil.jpg"
             className="w-full h-60 object-cover group-hover:scale-110 group-hover:brightness-75 transition-all duration-500"
           />
           <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition duration-300"></div>
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent px-4 py-4">
-            <h3 className="text-lg font-semibold text-white">{project.title}</h3>
           </div>
         </motion.div>
       ))}
