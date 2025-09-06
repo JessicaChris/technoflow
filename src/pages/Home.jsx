@@ -86,7 +86,7 @@ const scrollToAbout = () => {
     playsInline
     className="absolute w-full h-full object-cover brightness-50 pointer-events-none" 
   >
-    <source src="/videos/video1.mp4" type="video/mp4" />
+    <source src="/videos/panel.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 
