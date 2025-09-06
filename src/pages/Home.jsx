@@ -520,53 +520,18 @@ We install a wide range of instruments used for monitoring, measurement, and aut
           className="relative overflow-hidden group shadow-lg rounded-xl border border-gray-800"
         >
           <img
-            src="/images/oil.jpg"
+            src={project.image}
+            alt=""
             className="w-full h-60 object-cover group-hover:scale-110 group-hover:brightness-75 transition-all duration-500"
           />
           <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition duration-300"></div>
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent px-4 py-4">
-          </div>
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent px-4 py-4"></div>
         </motion.div>
       ))}
     </div>
   </div>
 </section>
 
-  {/* <section className="bg-gray-950 py-20 px-6 text-white">
-      <div className="max-w-7xl mx-auto">
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl font-bold text-center mb-12 text-blue-400"
-        >
-          Completed Projects
-        </motion.h2>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-          {projects.map((project, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: idx * 0.2 }}
-              className="overflow-hidden rounded-lg shadow-lg group relative"
-            >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent px-4 py-3">
-                <h3 className="text-lg font-semibold text-white">
-                  {project.title}
-                </h3>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section> */}
       </main>
 
       {/* CTA Section */}
