@@ -57,22 +57,10 @@ const scrollToAbout = () => {
     autoplaySpeed: 3000,
   };
   const projects = [
-  {
-    title: "Waters Edge At Yas Island",
-    image: "https://source.unsplash.com/800x600/?island,architecture",
-  },
-  {
-    title: "Mamsha Al Saadiyat",
-    image: "https://source.unsplash.com/800x600/?beach,urban",
-  },
-  {
-    title: "Louvre Museum",
-    image: "https://source.unsplash.com/800x600/?museum,modern",
-  },
-  {
-    title: "Hilton Al Saadiyat",
-    image: "https://source.unsplash.com/800x600/?hotel,luxury",
-  },
+  { image: "/images/epdc1.jpg" },
+  { image: "/images/mech.jpg" },
+  { image: "/images/work1.png" },
+  { image: "/images/work4.png" },
 ];
 
   return (
