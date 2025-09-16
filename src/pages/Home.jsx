@@ -57,11 +57,11 @@ const scrollToAbout = () => {
     autoplaySpeed: 3000,
   };
   const projects = [
-  { image: "/images/epdc1.jpg" },
-  { image: "/images/mech.jpg" },
-  { image: "/images/work1.png" },
-  { image: "/images/work4.png" },
+  { images: ["/images/cp-1.png", "/images/cp-2.png", "/images/cp-3.png"] },
+  { images: ["/images/cp-4.png", "/images/cp-5.png", "/images/work7.png"] },
+  { images: ["/images/work4.png", "/images/work6.png", "/images/epdc1.jpg"] },
 ];
+
 
   return (
     <div className="font-sans bg-white-900 text-white">
@@ -233,48 +233,72 @@ const scrollToAbout = () => {
   </motion.div>
 </section>
 
-<section  ref={mechanicalRef} className="relative bg-white text-black px-6 py-20 overflow-hidden">
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center"
-      >
-        <div className="backdrop-blur-xl bg-white/5 p-8 rounded-3xl border border-white/10 shadow-xl hover:shadow-blue-500/20 transition duration-500">
-          <h2 className="text-4xl font-extrabold text-blue-400 mb-4">Mechanical Division</h2>
-          <p className="text-md text-black-300 mb-6">
-            Technoflow provides expert services for <span className="text-black font-semibold">pumps, generators, HVAC</span>, and <span className="text-black font-semibold">solar energy systems</span>, optimizing efficiency and sustainability.
-          </p>
-          <ul className="space-y-2 text-sm text-black-100 pl-4 list-disc">
-            <li>Solar AC & Water Heating</li>
-            <li>Diesel UPS & Pumping Systems</li>
-            <li>HVAC & Chiller Installations</li>
-            <li>Energy Optimization & Support</li>
-          </ul>
-          <p className="text-sm text-black-400 mt-6">
-            Tailored solutions ensure <span className="text-black font-medium">reliable mechanical infrastructure</span>.
-          </p>
-        </div>
+<section ref={mechanicalRef} className="relative bg-white text-black px-6 py-20 overflow-hidden">
+  <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true }}
+    className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center"
+  >
+    {/* LEFT SIDE CONTENT */}
+    <div className="backdrop-blur-xl bg-white/5 p-8 rounded-3xl border border-white/10 shadow-xl hover:shadow-blue-500/20 transition duration-500">
+      <h2 className="text-4xl font-extrabold text-blue-400 mb-4">Mechanical Division</h2>
+      <p className="text-md text-black-300 mb-6">
+        Technoflow provides expert services for{" "}
+        <span className="text-black font-semibold">pumps, generators, HVAC</span>, and{" "}
+        <span className="text-black font-semibold">solar energy systems</span>, optimizing efficiency and sustainability.
+      </p>
+      <ul className="space-y-2 text-sm text-black-100 pl-4 list-disc">
+        <li>Solar AC & Water Heating</li>
+        <li>Diesel UPS & Pumping Systems</li>
+        <li>HVAC & Chiller Installations</li>
+        <li>Energy Optimization & Support</li>
+      </ul>
+      <p className="text-sm text-black-400 mt-6">
+        Tailored solutions ensure <span className="text-black font-medium">reliable mechanical infrastructure</span>.
+      </p>
+    </div>
 
-        <motion.div
-          initial={{ scale: 0.95, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-blue-400/30 transition"
-        >
-          <img
-            src="/images/mech.jpg"
-            alt="Mechanical Division"
-            className="rounded-2xl w-full object-cover h-full transform hover:scale-105 transition duration-500"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent p-6 flex items-end">
-            <h3 className="text-white text-xl font-semibold">Advanced Mechanical Systems</h3>
-          </div>
-        </motion.div>
-      </motion.div>
-    </section>
+    {/* RIGHT SIDE SLIDESHOW */}
+    <motion.div
+      initial={{ scale: 0.95, opacity: 0 }}
+      whileInView={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+      viewport={{ once: true }}
+      className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-blue-400/30 transition"
+    >
+      {/* Slideshow styles */}
+      <style>{`
+        .mech-fade-slider { position: relative; height: 100%; }
+        .mech-fade-slider .mech-slide {
+          position: absolute; inset: 0;
+          width: 100%; height: 100%; object-fit: cover;
+          opacity: 0;
+          animation: mechFade 12s infinite;
+        }
+        @keyframes mechFade {
+          0%   { opacity: 0; transform: scale(1.02); }
+          5%   { opacity: 1; transform: scale(1); }
+          30%  { opacity: 1; transform: scale(1); }
+          35%  { opacity: 0; transform: scale(1.02); }
+          100% { opacity: 0; transform: scale(1.02); }
+        }
+      `}</style>
+
+      <div className="mech-fade-slider min-h-[320px] sm:min-h-[420px]">
+        <img src="/images/tc-1.png"    alt="Mechanical 1" className="mech-slide rounded-2xl" style={{ animationDelay: "0s" }} />
+        <img src="/images/tc-2.png"   alt="Mechanical 2" className="mech-slide rounded-2xl" style={{ animationDelay: "4s" }} />
+        <img src="/images/tc-3.png"  alt="Mechanical 3" className="mech-slide rounded-2xl" style={{ animationDelay: "8s" }} />
+      </div>
+
+      {/* Gradient overlay + caption */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent p-6 flex items-end pointer-events-none">
+        <h3 className="text-white text-xl font-semibold">Advanced Mechanical Systems</h3>
+      </div>
+    </motion.div>
+  </motion.div>
+</section>
 
     {/* --- vessel --- */}
     <section ref={vesselRef} className="relative bg-white text-black px-6 py-20 overflow-hidden">
@@ -321,48 +345,81 @@ const scrollToAbout = () => {
     </section>
 
     {/* --- Panel Work --- */}
-    <section ref={panelRef} className="relative bg-white text-black px-6 py-20 overflow-hidden">
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center"
-      >
-        <div className="backdrop-blur-xl bg-white/5 p-8 rounded-3xl border border-white/10 shadow-xl hover:shadow-blue-500/20 transition duration-500">
-          <h2 className="text-4xl font-extrabold text-blue-400 mb-4">PANEL WORK</h2>
-          <p className="text-md text-black-300 mb-6">
-           Technoflow delivers custom-designed electrical panel solutions for marine and industrial applications — built for durability, safety, and smart control.
-          </p>
-          <ul className="space-y-2 text-sm text-black-100 pl-4 list-disc">
-            <li> Fabrication of LT & HT Panels</li>
-            <li>Control panel wiring & component integration</li>
-            <li>Lighting distribution panels</li>
-            <li>PLC & automation panel design</li>
-          </ul>
-          <p className="text-sm text-black-400 mt-6">
-            Driving <span className="text-black font-medium">automation, analytics, and insight</span> for modern industries.
-          </p>
-        </div>
+<section
+  ref={panelRef}
+  className="relative bg-white text-black px-6 py-20 overflow-hidden"
+>
+  <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true }}
+    className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center"
+  >
+    {/* LEFT SIDE CONTENT */}
+    <div className="backdrop-blur-xl bg-white/5 p-8 rounded-3xl border border-white/10 shadow-xl hover:shadow-blue-500/20 transition duration-500">
+      <h2 className="text-4xl font-extrabold text-blue-400 mb-4">PANEL WORK</h2>
+      <p className="text-md text-black-300 mb-6">
+        Technoflow delivers custom-designed electrical panel solutions for
+        marine and industrial applications — built for durability, safety, and
+        smart control.
+      </p>
+      <ul className="space-y-2 text-sm text-black-100 pl-4 list-disc">
+        <li>MDB panel work</li>
+        <li>SMDB panel work</li>
+        <li>VFD panel work</li>
+        <li>CONTRO PANEL panel work</li>
+        <li>CAPACITOR BANK panel work</li>
+      </ul>
+      <p className="text-sm text-black-400 mt-6">
+        Driving{" "}
+        <span className="text-black font-medium">
+          automation, analytics, and insight
+        </span>{" "}
+        for modern industries.
+      </p>
+    </div>
 
-        <motion.div
-          initial={{ scale: 0.95, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-blue-400/30 transition"
-        >
-          <img
-            src="/images/work4.png"
-            alt="Panel Work"
-            className="rounded-2xl w-full object-cover h-full transform hover:scale-105 transition duration-500"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent p-6 flex items-end">
-            <h3 className="text-white text-xl font-semibold">Panel Work Image</h3>
-          </div>
-        </motion.div>
-      </motion.div>
-    </section>
+    {/* RIGHT SIDE SLIDESHOW */}
+    <motion.div
+      initial={{ scale: 0.95, opacity: 0 }}
+      whileInView={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+      viewport={{ once: true }}
+      className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-blue-400/30 transition"
+    >
+      {/* Slideshow styles */}
+      <style>{`
+        .panel-fade-slider { position: relative; height: 100%; }
+        .panel-fade-slider .panel-slide {
+          position: absolute; inset: 0;
+          width: 100%; height: 100%; object-fit: cover;
+          opacity: 0;
+          animation: panelFade 12s infinite;
+        }
+        @keyframes panelFade {
+          0%   { opacity: 0; transform: scale(1.02); }
+          5%   { opacity: 1; transform: scale(1); }
+          30%  { opacity: 1; transform: scale(1); }
+          35%  { opacity: 0; transform: scale(1.02); }
+          100% { opacity: 0; transform: scale(1.02); }
+        }
+      `}</style>
+
+      <div className="panel-fade-slider min-h-[320px] sm:min-h-[420px]">
+        <img src="/images/tc-4.png"  alt="Panel Work 1" className="panel-slide rounded-2xl" style={{ animationDelay: "0s" }} />
+        <img src="/images/tc-5.png"  alt="Panel Work 2" className="panel-slide rounded-2xl" style={{ animationDelay: "4s" }} />
+        <img src="/images/tc-6.png"  alt="Panel Work 3" className="panel-slide rounded-2xl" style={{ animationDelay: "8s" }} />
+      </div>
+
+      {/* Gradient overlay + caption */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent p-6 flex items-end pointer-events-none">
+        <h3 className="text-white text-xl font-semibold">Panel Work</h3>
+      </div>
+    </motion.div>
+  </motion.div>
+</section>
+
 
     {/* --- Site Work --- */}
     <section ref={siteRef} className="relative bg-white text-black px-6 py-20 overflow-hidden">
@@ -498,9 +555,28 @@ We install a wide range of instruments used for monitoring, measurement, and aut
       </motion.div>
     </section>
 
-
-    <section className="bg-white text-black py-20 px-6">
+   <section className="bg-white text-black py-20 px-6">
   <div className="max-w-7xl mx-auto">
+    {/* one-time styles for all cards */}
+    <style>{`
+      .proj-fader { position: relative; height: 15rem; } /* equals h-60 */
+      .proj-fader .slide {
+        position: absolute; inset: 0;
+        width: 100%; height: 100%; object-fit: cover;
+        opacity: 0;
+        animation: projFade 12s infinite; /* 3 slides × 4s each */
+        transition: transform .5s, filter .5s;
+      }
+      .group:hover .slide { transform: scale(1.10); filter: brightness(0.85); }
+      @keyframes projFade {
+        0%   { opacity: 0; transform: scale(1.02); }
+        5%   { opacity: 1; transform: scale(1); }
+        30%  { opacity: 1; transform: scale(1); }
+        35%  { opacity: 0; transform: scale(1.02); }
+        100% { opacity: 0; transform: scale(1.02); }
+      }
+    `}</style>
+
     <motion.h2
       initial={{ opacity: 0, y: -20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -511,26 +587,48 @@ We install a wide range of instruments used for monitoring, measurement, and aut
     </motion.h2>
 
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-      {projects.map((project, idx) => (
-        <motion.div
-          key={idx}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: idx * 0.2 }}
-          className="relative overflow-hidden group shadow-lg rounded-xl border border-gray-800"
-        >
-          <img
-            src={project.image}
-            alt=""
-            className="w-full h-60 object-cover group-hover:scale-110 group-hover:brightness-75 transition-all duration-500"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition duration-300"></div>
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent px-4 py-4"></div>
-        </motion.div>
-      ))}
+      {projects.map((project, idx) => {
+        // allow both shapes: {images:[...]} or {image:"..."}
+        const imgs = (
+          Array.isArray(project.images)
+            ? project.images
+            : [project.image, "/images/work4.png", "/images/work1.png"]
+        )
+          .filter(Boolean)   // remove undefined/null
+          .slice(0, 3);      // ensure 3 images
+
+        return (
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: idx * 0.2 }}
+            className="relative overflow-hidden group shadow-lg rounded-xl border border-gray-800"
+          >
+            {/* slideshow */}
+            <div className="proj-fader">
+              {imgs.map((src, i) => (
+                <img
+                  key={i}
+                  src={src}
+                  alt=""
+                  className="slide"
+                  style={{ animationDelay: `${i * 4}s` }}
+                />
+              ))}
+            </div>
+
+            {/* hover overlay + bottom gradient (kept from your code) */}
+            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition duration-300" />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent px-4 py-4" />
+          </motion.div>
+        );
+      })}
     </div>
   </div>
 </section>
+
+
 
       </main>
 
