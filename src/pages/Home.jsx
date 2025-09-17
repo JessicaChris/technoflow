@@ -406,7 +406,7 @@ const scrollToAbout = () => {
         }
       `}</style>
 
-      <div className="panel-fade-slider min-h-[320px] sm:min-h-[420px]">
+     <div className="panel-fade-slider min-h-[320px] sm:min-h-[420px]">
         <img src="/images/tc-4.png"  alt="Panel Work 1" className="panel-slide rounded-2xl" style={{ animationDelay: "0s" }} />
         <img src="/images/tc-5.png"  alt="Panel Work 2" className="panel-slide rounded-2xl" style={{ animationDelay: "4s" }} />
         <img src="/images/tc-6.png"  alt="Panel Work 3" className="panel-slide rounded-2xl" style={{ animationDelay: "8s" }} />
