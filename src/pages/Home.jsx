@@ -395,7 +395,7 @@ const scrollToAbout = () => {
           position: absolute; inset: 0;
           width: 100%; height: 100%; object-fit: cover;
           opacity: 0;
-          animation: panelFade 12s infinite;
+          animation: panelFade 15s infinite;
         }
         @keyframes panelFade {
           0%   { opacity: 0; transform: scale(1.02); }
@@ -406,11 +406,17 @@ const scrollToAbout = () => {
         }
       `}</style>
 
-     <div className="panel-fade-slider min-h-[320px] sm:min-h-[420px]">
-        <img src="/images/tc-4.png"  alt="Panel Work 1" className="panel-slide rounded-2xl" style={{ animationDelay: "0s" }} />
-        <img src="/images/tc-5.png"  alt="Panel Work 2" className="panel-slide rounded-2xl" style={{ animationDelay: "4s" }} />
-        <img src="/images/tc-6.png"  alt="Panel Work 3" className="panel-slide rounded-2xl" style={{ animationDelay: "8s" }} />
-      </div>
+      <div className="panel-fade-slider min-h-[320px] sm:min-h-[420px]">
+  <img src="/images/tc-4.png"  alt="Panel Work 1" className="panel-slide rounded-2xl" style={{ animationDelay: "0s" }} />
+  <img src="/images/tc-5.png"  alt="Panel Work 2" className="panel-slide rounded-2xl" style={{ animationDelay: "1.875s" }} />
+  <img src="/images/tc-6.png"  alt="Panel Work 3" className="panel-slide rounded-2xl" style={{ animationDelay: "3.75s" }} />
+  <img src="/images/pa-1.jpg"  alt="Panel Work 4" className="panel-slide rounded-2xl" style={{ animationDelay: "5.625s" }} />
+  <img src="/images/pa-2.jpg"  alt="Panel Work 5" className="panel-slide rounded-2xl" style={{ animationDelay: "7.5s" }} />
+  <img src="/images/pa-3.jpg"  alt="Panel Work 6" className="panel-slide rounded-2xl" style={{ animationDelay: "9.375s" }} />
+  <img src="/images/pa-4.jpg"  alt="Panel Work 7" className="panel-slide rounded-2xl" style={{ animationDelay: "11.25s" }} />
+  <img src="/images/pa-5.jpg"  alt="Panel Work 8" className="panel-slide rounded-2xl" style={{ animationDelay: "13.125s" }} />
+</div>
+
 
       {/* Gradient overlay + caption */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent p-6 flex items-end pointer-events-none">
@@ -510,61 +516,108 @@ We handle everything from mounting to live testing
       </motion.div>
     </section>
 
-    {/* --- INSTRUMENT INSTALLATION --- */}
-    <section ref={instrumentRef} className="relative bg-white text-black px-6 py-20 overflow-hidden">
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center"
-      >
-        <div className="backdrop-blur-xl bg-white/5 p-8 rounded-3xl border border-white/10 shadow-xl hover:shadow-blue-500/20 transition duration-500">
-          <h2 className="text-4xl font-extrabold text-blue-400 mb-4">INSTRUMENT INSTALLATION</h2>
-          <p className="text-md text-black-300 mb-6">
-           Technoflow offers precise and reliable instrument installation services for vessels, ports, and industrial systems — ensuring your operations run with maximum accuracy and control.
-We install a wide range of instruments used for monitoring, measurement, and automation, all done with tight calibration and clean cable management.
-          </p>
-          <ul className="space-y-2 text-sm text-black-100 pl-4 list-disc">
-            <li>  Temperature, pressure & level transmitters</li>
-            <li>Flow meters & sensors</li>
-            <li>Voltage/current measuring instruments</li>
-            <li> Control and signal transmitters</li>
-          </ul>
-          <p className="text-sm text-black-400 mt-6">
-            Driving <span className="text-black font-medium">automation, analytics, and insight</span> for modern industries.
-          </p>
-        </div>
+{/* --- INSTRUMENT INSTALLATION --- */}
+<section
+  ref={instrumentRef}
+  className="relative bg-white text-black px-6 py-20 overflow-hidden"
+>
+  <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true }}
+    className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center"
+  >
+    {/* LEFT SIDE CONTENT */}
+    <div className="backdrop-blur-xl bg-white/5 p-8 rounded-3xl border border-white/10 shadow-xl hover:shadow-blue-500/20 transition duration-500">
+      <h2 className="text-4xl font-extrabold text-blue-400 mb-4">
+        INSTRUMENT INSTALLATION
+      </h2>
+      <p className="text-md text-black-300 mb-6">
+        Technoflow offers precise and reliable instrument installation services
+        for vessels, ports, and industrial systems — ensuring your operations run
+        with maximum accuracy and control. We install a wide range of instruments
+        used for monitoring, measurement, and automation, all done with tight
+        calibration and clean cable management.
+      </p>
+      <ul className="space-y-2 text-sm text-black-100 pl-4 list-disc">
+        <li>Temperature, pressure &amp; level transmitters</li>
+        <li>Flow meters &amp; sensors</li>
+        <li>Voltage/current measuring instruments</li>
+        <li>Control and signal transmitters</li>
+      </ul>
+      <p className="text-sm text-black-400 mt-6">
+        Driving{" "}
+        <span className="text-black font-medium">
+          automation, analytics, and insight
+        </span>{" "}
+        for modern industries.
+      </p>
+    </div>
 
-        <motion.div
-          initial={{ scale: 0.95, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-blue-400/30 transition"
-        >
+    {/* RIGHT SIDE SLIDESHOW */}
+    <motion.div
+      initial={{ scale: 0.95, opacity: 0 }}
+      whileInView={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+      viewport={{ once: true }}
+      className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-blue-400/30 transition"
+    >
+      {/* slideshow styles */}
+      <style>{`
+        .inst-fade-slider { position: relative; height: 100%; }
+        .inst-fade-slider .inst-slide {
+          position: absolute; inset: 0;
+          width: 100%; height: 100%; object-fit: cover;
+          opacity: 0;
+          animation: instFade 15s infinite;
+        }
+        @keyframes instFade {
+          0%   { opacity: 0; transform: scale(1.02); }
+          8%   { opacity: 1; transform: scale(1); }
+          20%  { opacity: 1; transform: scale(1); }
+          25%  { opacity: 0; transform: scale(1.02); }
+          100% { opacity: 0; transform: scale(1.02); }
+        }
+      `}</style>
+
+      <div className="inst-fade-slider min-h-[320px] sm:min-h-[420px]">
+        {[
+          "/images/ii-1.png",
+          "/images/ii-2.png",
+          "/images/ii-3.png",
+          "/images/ii-4.png",
+        ].map((src, i) => (
           <img
-            src="/images/work12.png"
-            alt="Panel Work"
-            className="rounded-2xl w-full object-cover h-full transform hover:scale-105 transition duration-500"
+            key={i}
+            src={src}
+            alt={`Instrument Work ${i + 1}`}
+            className="inst-slide rounded-2xl"
+            style={{ animationDelay: `${i * (15 / 4)}s` }} // 4 slides evenly in 15s
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent p-6 flex items-end">
-            <h3 className="text-white text-xl font-semibold">Instrument Installation Image</h3>
-          </div>
-        </motion.div>
-      </motion.div>
-    </section>
+        ))}
+      </div>
 
-   <section className="bg-white text-black py-20 px-6">
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent p-6 flex items-end">
+        <h3 className="text-white text-xl font-semibold">
+          Instrument Installation
+        </h3>
+      </div>
+    </motion.div>
+  </motion.div>
+</section>
+
+{/* --- COMPLETED PROJECTS --- */}
+<section className="bg-white text-black py-20 px-6">
   <div className="max-w-7xl mx-auto">
     {/* one-time styles for all cards */}
     <style>{`
-      .proj-fader { position: relative; height: 15rem; } /* equals h-60 */
+      .proj-fader { position: relative; height: 15rem; }
       .proj-fader .slide {
         position: absolute; inset: 0;
         width: 100%; height: 100%; object-fit: cover;
         opacity: 0;
-        animation: projFade 12s infinite; /* 3 slides × 4s each */
+        animation: projFade 12s infinite;
         transition: transform .5s, filter .5s;
       }
       .group:hover .slide { transform: scale(1.10); filter: brightness(0.85); }
@@ -589,13 +642,9 @@ We install a wide range of instruments used for monitoring, measurement, and aut
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
       {projects.map((project, idx) => {
         // allow both shapes: {images:[...]} or {image:"..."}
-        const imgs = (
-          Array.isArray(project.images)
-            ? project.images
-            : [project.image, "/images/work4.png", "/images/work1.png"]
-        )
-          .filter(Boolean)   // remove undefined/null
-          .slice(0, 3);      // ensure 3 images
+        const imgs = Array.isArray(project.images)
+          ? project.images
+          : [project.image, "/images/work4.png", "/images/work1.png"];
 
         return (
           <motion.div
@@ -605,9 +654,8 @@ We install a wide range of instruments used for monitoring, measurement, and aut
             transition={{ duration: 0.5, delay: idx * 0.2 }}
             className="relative overflow-hidden group shadow-lg rounded-xl border border-gray-800"
           >
-            {/* slideshow */}
             <div className="proj-fader">
-              {imgs.map((src, i) => (
+              {imgs.filter(Boolean).slice(0, 3).map((src, i) => (
                 <img
                   key={i}
                   src={src}
@@ -618,7 +666,7 @@ We install a wide range of instruments used for monitoring, measurement, and aut
               ))}
             </div>
 
-            {/* hover overlay + bottom gradient (kept from your code) */}
+            {/* overlays */}
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition duration-300" />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent px-4 py-4" />
           </motion.div>
@@ -627,6 +675,7 @@ We install a wide range of instruments used for monitoring, measurement, and aut
     </div>
   </div>
 </section>
+
 
 
 
