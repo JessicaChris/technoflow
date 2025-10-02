@@ -5,6 +5,10 @@ const Gallery = () => {
     "/images/work1.png","/images/work4.png","/images/work12.png",
     "/images/work6.png","/images/work7.png","/images/mech.jpg",
     "/images/oil.jpg","/images/hero2.jpg","/images/hero3.jpg",
+    "/images/pa-1.jpg","/images/tc-1.png","/images/tc-2.png",
+    "/images/tc-6.png","/images/tc-5.png","/images/pa-2.jpg",
+    "/images/pa-3.jpg","/images/pa-4.jpg","/images/pa-5.jpg",
+    "/images/ii-1.png","/images/ii-2.png","/images/ii-3.png",
   ];
 
   const [isOpen, setIsOpen] = useState(false);
@@ -176,4 +180,3 @@ const Gallery = () => {
 };
 
 export default Gallery;
-
